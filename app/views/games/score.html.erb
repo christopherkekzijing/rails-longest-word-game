@@ -1,0 +1,17 @@
+<div class="container">
+<h1>Result</h1>
+<!-- <%= @answer %> -->
+
+<% if @result["found"] != true%>
+<p> Sorry <strong><%=@answer%></strong> is not english.</p>
+<% elsif @answer.split("").all? { |i| @rand_letters.include?(i) } == false %>
+<%= "Sorry but text can't be build out of #{@rand_letters.split(" ").join(", ").upcase}" %>
+<% elsif @result["found"] == true && @answer.split("").all? { |i| @rand_letters.include?(i) }%>
+<%= "Congratulations! #{@answer} is a valid english word!" %>
+<% end %>
+<br>
+<!-- <%= @rand_letters %> -->
+  <%= link_to "Play again", new_path %>
+</div>
+<!-- if d.all? { |i| c.include?(i) } -->
+<strong></strong>
